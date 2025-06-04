@@ -1,0 +1,6 @@
+steps to generate token - 
+
+1. logout from kite API web app.
+2. click on the link
+3. login using MFA
+4. copy the token from url
