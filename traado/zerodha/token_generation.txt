@@ -4,3 +4,14 @@ steps to generate token -
 2. click on the link
 3. login using MFA
 4. copy the token from url
+
+
+
+
+create a python script for automated trading with following conditions
+
+- buy ATM NIFTY 50 straddle at "entry_time" and exit the positions at "exit_time"
+time format can be HH:MM 
+- P&L calculation is considered at 
+- preset the SL at 2.5% of the total P&L of both legs.
+- once the target price of 5% is achieved 
