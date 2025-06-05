@@ -66,4 +66,9 @@ if __name__=="__main__":
          exit()
 
     # fetch_option_chain()
-    display_option_chain()
+    while True :
+        command = input('Do you want to run again?')
+        if command == 'y':
+            display_option_chain()
+        else :
+            break
