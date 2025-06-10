@@ -1,3 +1,26 @@
 2025-06-05 13:03:24,587 - INFO - BUY order placed for NIFTY2560524800CE
 2025-06-05 13:03:24,759 - INFO - BUY order placed for NIFTY2560524800PE
 2025-06-05 13:03:24,867 - INFO - Entered ATM Straddle at 1:00 PM
+2025-06-05 13:12:53,937 - INFO - Successfully authenticated with Kite API.
+2025-06-05 13:12:53,938 - INFO - Starting ATM Straddle Strategy Script
+2025-06-05 13:12:53,938 - INFO - Waiting for 1:00 PM to start trade...
+2025-06-05 13:12:54,839 - INFO - Nearest expiry selected: 2025-06-05 00:00:00
+2025-06-05 13:12:54,900 - INFO - Spot LTP: 24796.2, ATM Strike: 24800
+2025-06-05 13:12:55,630 - ERROR - Error fetching ATM options: single positional indexer is out-of-bounds
+2025-06-05 13:12:55,630 - ERROR - Unexpected error: single positional indexer is out-of-bounds
+2025-06-05 13:14:21,828 - INFO - Successfully authenticated with Kite API.
+2025-06-05 13:14:21,831 - INFO - Starting ATM Straddle Strategy Script
+2025-06-05 13:14:21,831 - INFO - Waiting for 1:00 PM to start trade...
+2025-06-05 13:14:22,842 - INFO - Nearest expiry selected: 2025-06-05 00:00:00
+2025-06-05 13:14:22,900 - INFO - Spot LTP: 24781.5, ATM Strike: 24800
+2025-06-05 13:14:23,786 - INFO - Placing BUY order for NIFTY2560524800CE
+2025-06-05 13:14:23,849 - INFO - Placing BUY order for NIFTY2560524800PE
+2025-06-05 13:14:23,910 - INFO - Entered ATM Straddle at 1:00 PM: NIFTY2560524800CE @ ₹33.1, NIFTY2560524800PE @ ₹64.25
+2025-06-05 13:21:55,666 - INFO - Successfully authenticated with Kite API.
+2025-06-05 13:21:55,666 - INFO - Starting ATM Straddle Strategy Script
+2025-06-05 13:21:55,666 - INFO - Waiting for 1:00 PM to start trade...
+2025-06-05 13:21:56,514 - INFO - Nearest expiry selected: 2025-06-05 00:00:00
+2025-06-05 13:21:56,561 - INFO - Spot LTP: 24773.95, ATM Strike: 24750
+2025-06-05 13:21:57,475 - INFO - Placing BUY order for NIFTY2560524750CE
+2025-06-05 13:21:57,525 - INFO - Placing BUY order for NIFTY2560524750PE
+2025-06-05 13:21:57,588 - INFO - Entered ATM Straddle at 1:00 PM: NIFTY2560524750CE @ ₹50.4, NIFTY2560524750PE @ ₹35.1

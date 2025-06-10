@@ -1,0 +1,64 @@
+create a python script to execute the following - 
+
+- at 09:45 AM calculate the day high and day low. 
+- if the price crosses above the day high or below the day low, and stays above or below this level till 10:00 AM, buy ATM straddle at 10:00 AM.
+- if the price is within the range of day high and day low calculated at 09:45 AM, do not buy anything. 
+
+
+- after this, check the day high and day low after every 15 mins - 
+ - if the price is within the day high and day low, do not buy anything.
+ - if the price goes crosses day high or day low, wait for 15 mins,
+ - and check if the price is still outside the range of day high and day low. 
+ if yes, buy ATM straddle, else wait for next 15 mins, and check if the day's high or low is crossed. 
+ - if yes, wait for next 15 mins and check if the 
+
+
+=====================
+
+
+- at 10 AM, check the day's high and day's low, calculated till 09:45 AM.
+- if the current price is above the day's high or day's low calculated till 09:45 AM, buy ATM straddle immediately. 
+- if not, wait till 15 mins, and calculate the day's high and day's low till current time - 15 mins,  
+- if the current price is above the day's high or below day's low calculated upto current time - 15 mins, buy ATM straddle immediately. 
+ - else wait till next 15 mins.
+
+
+==================================================
+
+create a python script that can be deployed on AWS server to execute the following - 
+we are trading Nifty 50 options. has default lot size of 75 units. 
+
+- use WebSocket version for better price precision 
+- Start at 10 AM check the day's high or day's low, till  (current time - 15 mins ) 
+- if the current price is above day's high or below day's low, calculated till (current time - 15 mins ), buy ATM straddle.
+- else, wait till next 15 mins, calculate the day's high and day's low till (current time - 15 mins )
+- if the current price is above day's high or below day's low, buy ATM straddle.
+- else, wait for next 15 mins. 
+- repeat the logic till 03:00 PM, if buy order is not placed. 
+- Buying of the straddle will only happen once a day.
+- if it is expiry day, we buy next week's expiry options. else we buy current week expiry options.
+
+
+add the exit and SL trailing logic as per the given conditions
+
+- initial target is set at +2.5% of total buy price. and SL is set as -2.5% of total buy price.
+- if SL is hit, exit both the legs and close the trade for the day. 
+if initial profit of 2.5% of total PNL is hit 
+- exit the leg that is under loss, or if both legs are under profit, exit the leg with minimum profit.
+- set the new SL at +1% of total byu price. 
+- on remaining leg, trail the profits by by 1.5% of total PNL for increase of 1.5% of total PNL.
+
+
+
+
+on remaining leg,trail the SL with given conditions. 
+
+- on remaining leg, calculate the individual profit percentage.
+- on increase of every 2.5% in individual profit, trail the SL by 2.5% above the current SL.
+- exit the trades of the day at 3:14 PM.
+
+
+
+- on increase of every 1.5% of the total PNL, increase the SL by 1.5%.
+- considering new SL at 1% of total PNL, calculate the difference of current price of the remaining leg and SL pint.
+- take this price difference as the buffer for SL trailing of 1:1 ratio.
