@@ -36,6 +36,7 @@ we are trading Nifty 50 options. has default lot size of 75 units.
 - else, wait for next 15 mins. 
 - repeat the logic till 03:00 PM, if buy order is not placed. 
 - Buying of the straddle will only happen once a day.
+- add a retry mechanism if placing an order fails.
 - if it is expiry day, we buy next week's expiry options. else we buy current week expiry options.
 
 
@@ -62,3 +63,36 @@ on remaining leg,trail the SL with given conditions.
 - on increase of every 1.5% of the total PNL, increase the SL by 1.5%.
 - considering new SL at 1% of total PNL, calculate the difference of current price of the remaining leg and SL pint.
 - take this price difference as the buffer for SL trailing of 1:1 ratio.
+
+
+
+=============================================
+
+create a python script that can be deployed on AWS server to execute the following - 
+we are Paper trading Bank Nifty options. has default lot size of 30 units. 
+
+- use WebSocket version for better price precision 
+- Start at 10 AM check the day's high or day's low, till  09:45 AM.
+- if the current price is above day's high or below day's low, buy ATM straddle.
+- else, wait till next 15 mins, check if there is a cross over, if yes buy ATM straddle.
+- else, wait for next 15 mins. 
+- repeat the logic till 03:00 PM, if buy order is not placed. 
+- Buying of the straddle will only happen once a day.
+- if it is expiry day, we buy next month's expiry options. else we buy current week expiry options.
+
+
+add the exit and SL trailing logic as per the given conditions
+
+- initial target is set at +2.5% of total buy price. and SL is set as -2.5% of total buy price.
+- if SL is hit, exit both the legs and close the trade for the day. 
+if initial profit of 2.5% of total PNL is hit 
+- exit the leg that is under loss, or if both legs are under profit, exit the leg with minimum profit.
+- on remaining leg, trail the profits by by 2.5% for increase of 2.5% of total PNL.
+
+- include logging at each level and display total PNL every second. 
+- log the messages at buy, sell and SL trailing.
+
+
+
+##### to be added in real trade ---
+- - add a retry mechanism if placing an order fails.
