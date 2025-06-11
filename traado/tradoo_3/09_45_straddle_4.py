@@ -6,6 +6,8 @@ import pandas as pd
 from kiteconnect import KiteConnect, KiteTicker
 import pytz
 import json
+from datetime import date
+import holidays
 
 # Configure logging
 logging.basicConfig(
@@ -31,8 +33,19 @@ CHECK_INTERVAL = 900  # 15 minutes in seconds
 # Initialize Kite Connect
 api_key = os.getenv('KITE_API_KEY')
 access_token = os.getenv('KITE_ACCESS_TOKEN')
+
+
+
+
+
+
 kite = KiteConnect(api_key=api_key)
 kite.set_access_token(access_token)
+
+
+
+
+
 
 # Global variables
 trading_day_high = None
@@ -44,6 +57,11 @@ pnl_updates = {}
 order_details = {}
 current_expiry = None
 next_expiry = None
+
+
+
+
+
 
 
 def get_expiry_dates():
@@ -238,40 +256,60 @@ def check_exit_conditions():
             if ce_pnl < pe_pnl:
                 exit_leg(straddle_data['ce_instrument']['instrument_token'], 'CE', 'TARGET_PARTIAL')
                 straddle_data['trailing_leg'] = 'PE'
+                straddle_data['trailing_leg_price'] = pe_price
             else:
                 exit_leg(straddle_data['pe_instrument']['instrument_token'], 'PE', 'TARGET_PARTIAL')
                 straddle_data['trailing_leg'] = 'CE'
+                straddle_data['trailing_leg_price'] = ce_price
         else:
             # Both legs in profit, exit the one with less profit
             if ce_pnl < pe_pnl:
                 exit_leg(straddle_data['ce_instrument']['instrument_token'], 'CE', 'TARGET_PARTIAL')
                 straddle_data['trailing_leg'] = 'PE'
+                straddle_data['trailing_leg_price'] = pe_price
             else:
                 exit_leg(straddle_data['pe_instrument']['instrument_token'], 'PE', 'TARGET_PARTIAL')
                 straddle_data['trailing_leg'] = 'CE'
+                straddle_data['trailing_leg_price'] = ce_price
         
         straddle_data['partial_exit_done'] = True
         straddle_data['trailing_active'] = True
         straddle_data['trailing_start_value'] = current_value
-        straddle_data['next_trailing_level'] = current_value * (1 + TRAILING_PERCENT/100)
-        logger.info(f"Partial exit complete. Trailing active on {straddle_data['trailing_leg']}. Next level: {straddle_data['next_trailing_level']:.2f}")
+        straddle_data['trailing_sl_price'] = straddle_data['trailing_leg_price'] * (1 - STOPLOSS_PERCENT/100)
+        logger.info(f"Partial exit complete. Trailing active on {straddle_data['trailing_leg']}. "
+                   f"Current price: {straddle_data['trailing_leg_price']:.2f}, "
+                   f"Trailing SL: {straddle_data['trailing_sl_price']:.2f}")
         return
     
     # Check trailing stop for remaining leg
     if straddle_data.get('trailing_active', False):
-        if current_value >= straddle_data['next_trailing_level']:
-            logger.info(f"Trailing level hit. Current value: {current_value}, Next level: {straddle_data['next_trailing_level']}")
-            straddle_data['trailing_levels'].append(current_value)
+        # Update current price of trailing leg
+        if straddle_data['trailing_leg'] == 'CE':
+            current_leg_price = ce_price
+        else:
+            current_leg_price = pe_price
+        
+        # Update trailing SL if price moves up
+        if current_leg_price > straddle_data['trailing_leg_price']:
+            straddle_data['trailing_leg_price'] = current_leg_price
+            new_sl = current_leg_price * (1 - STOPLOSS_PERCENT/100)
+            if new_sl > straddle_data['trailing_sl_price']:  # Only move SL up, not down
+                straddle_data['trailing_sl_price'] = new_sl
+                logger.info(f"Updated trailing SL for {straddle_data['trailing_leg']} to {new_sl:.2f}")
+        
+        # Check if trailing SL is hit
+        if current_leg_price <= straddle_data['trailing_sl_price']:
+            logger.info(f"Trailing SL hit for {straddle_data['trailing_leg']}. "
+                       f"Current price: {current_leg_price:.2f}, SL: {straddle_data['trailing_sl_price']:.2f}")
             
             # Exit the remaining leg
             if straddle_data['trailing_leg'] == 'CE':
-                exit_leg(straddle_data['ce_instrument']['instrument_token'], 'CE', 'TRAILING_TARGET')
+                exit_leg(straddle_data['ce_instrument']['instrument_token'], 'CE', 'TRAILING_SL')
             else:
-                exit_leg(straddle_data['pe_instrument']['instrument_token'], 'PE', 'TRAILING_TARGET')
+                exit_leg(straddle_data['pe_instrument']['instrument_token'], 'PE', 'TRAILING_SL')
             
             straddle_data['exited'] = True
-            logger.info(f"Straddle completely exited via trailing. Final PNL: {current_pnl:.2f}")
-
+            logger.info(f"Straddle completely exited via trailing SL. Final PNL: {current_pnl:.2f}")
 
 def exit_leg(instrument_token, leg_type, reason):
     """Exit one leg of the straddle"""
