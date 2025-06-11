@@ -87,8 +87,9 @@ add the exit and SL trailing logic as per the given conditions
 - if SL is hit, exit both the legs and close the trade for the day. 
 if initial profit of 2.5% of total PNL is hit 
 - exit the leg that is under loss, or if both legs are under profit, exit the leg with minimum profit.
-- on remaining leg, trail the profits by by 2.5% for increase of 2.5% of total PNL.
-
+- on remaining leg, trail the profits by by 2.5% for increase of every 2.5% of total PNL. 
+- exit the remaining leg if trailing SL is hit.
+- If no profit or SL level is hit, exit the positions at 3:14 PM.
 - include logging at each level and display total PNL every second. 
 - log the messages at buy, sell and SL trailing.
 
