@@ -1,0 +1,30 @@
+2025-06-12 14:31:03,602 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-12 14:31:05,407 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-12 14:31:05,413 - INFO - Trading session initialized
+2025-06-12 14:31:05,427 - ERROR - Error in main execution: '>' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 449, in main
+    trading_strategy()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 400, in trading_strategy
+    if current_price > trading_day_high or current_price < trading_day_low:
+TypeError: '>' not supported between instances of 'NoneType' and 'NoneType'
+2025-06-12 14:32:36,036 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-12 14:32:37,736 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-12 14:32:37,741 - INFO - Trading session initialized
+2025-06-12 14:32:37,750 - ERROR - Error in main execution: '>' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 449, in main
+    trading_strategy()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 400, in trading_strategy
+    if current_price > trading_day_high or current_price < trading_day_low:
+TypeError: '>' not supported between instances of 'NoneType' and 'NoneType'
+2025-06-12 14:42:48,337 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-12 14:42:50,111 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-12 14:42:50,117 - INFO - Trading session initialized
+2025-06-12 14:42:50,131 - ERROR - Error in main execution: '>' not supported between instances of 'NoneType' and 'NoneType'
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 450, in main
+    trading_strategy()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 401, in trading_strategy
+    if current_price > trading_day_high or current_price < trading_day_low:
+TypeError: '>' not supported between instances of 'NoneType' and 'NoneType'

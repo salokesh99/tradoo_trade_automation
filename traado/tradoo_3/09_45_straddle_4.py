@@ -30,8 +30,18 @@ TRADING_END_TIME = time(15, 15, tzinfo=IST)
 CHECK_INTERVAL = 900  # 15 minutes in seconds
 
 # Initialize Kite Connect
-api_key = os.getenv('KITE_API_KEY')
-access_token = os.getenv('KITE_ACCESS_TOKEN')
+# api_key = os.getenv('KITE_API_KEY')
+# access_token = os.getenv('KITE_ACCESS_TOKEN')
+
+api_key = "d7fg3jqz3k1i6eio"
+api_secret = "ngh8ag2owecpv05l8gbbdwe7491ikerx"
+print('https://kite.zerodha.com/connect/login?api_key=d7fg3jqz3k1i6eio&v=3')
+
+access_token = input('Enter the Input Token --\n')
+# A5fatS68JPjFZBo9qMQUIva65Qx8LL22
+
+
+
 kite = KiteConnect(api_key=api_key)
 kite.set_access_token(access_token)
 
@@ -72,7 +82,7 @@ def get_expiry_dates():
     banknifty_futures = [i for i in instruments if i['name'] == 'BANKNIFTY' and i['instrument_type'] == 'FUT']
     
     today = datetime.now(IST).date()
-    expiries = sorted(list(set([i['expiry'] for i in banknifty_futures)))
+    expiries = sorted(list(set(i['expiry'] for i in banknifty_futures)))
     
     current_expiry = None
     next_expiry = None
@@ -100,12 +110,20 @@ def get_atm_strike(price):
 def get_option_instruments(expiry_date, strike, option_type):
     """Get option instrument token for given parameters"""
     instruments = kite.instruments("NFO")
-    option = [i for i in instruments if 
-              i['name'] == 'BANKNIFTY' and 
-              i['instrument_type'] == 'CE' if option_type == 'CE' else 'PE' and 
-              i['expiry'] == expiry_date and 
-              i['strike'] == strike]
+    if option_type == 'CE':
+         expected_type = 'CE' 
+    else :
+        expected_type = 'PE'
     
+    option = [
+        i for i in instruments 
+        if (i['name'] == 'BANKNIFTY' and
+            i['instrument_type'] == expected_type and
+            i['expiry'] == expiry_date and
+            i['strike'] == strike)
+    ]
+    print(option)
+
     if not option:
         logger.error(f"No option found for {option_type} {strike} {expiry_date}")
         return None
@@ -314,6 +332,7 @@ def on_ticks(ws, ticks):
     
     for tick in ticks:
         if tick['instrument_token'] == banknifty_future_token:
+            print('tick', tick)
             current_price = tick['last_price']
             
             if trading_day_high is None or tick['last_price'] > trading_day_high:
@@ -358,14 +377,20 @@ def initialize_trading():
     
     today = datetime.now(IST).date()
     current_month_future = [f for f in banknifty_futures if f['expiry'].month == today.month and f['expiry'].year == today.year][0]
+    print('current month future', current_month_future)
     banknifty_future_token = current_month_future['instrument_token']
+    print('banknifty_future_token', banknifty_future_token)
     
     get_expiry_dates()
     logger.info("Trading session initialized")
 
 def trading_strategy():
-    """Main trading strategy logic"""
-    global straddle_bought
+    global straddle_bought, current_price, trading_day_high, trading_day_low
+    
+    # Initialize price variables if None
+    if current_price is None or trading_day_high is None or trading_day_low is None:
+        logger.error("Price data not initialized properly")
+        return
     
     now = datetime.now(IST)
     start_time = now.replace(hour=10, minute=0, second=0, microsecond=0)
