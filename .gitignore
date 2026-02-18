@@ -1,1 +1,29 @@
-traado/lib
+########################
+# Python / Build Artifacts
+########################
+__pycache__/
+*.py[cod]
+
+########################
+# Virtual Environments
+########################
+myenv/
+traado/bin/
+traado/include/
+traado/lib/
+traado/pyvenv.cfg
+
+########################
+# Logs & Temp Files
+########################
+*.log
+
+########################
+# Generated Data / Outputs
+########################
+historical_data/
+
+########################
+# OS / Editor Files
+########################
+.DS_Store

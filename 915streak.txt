@@ -1,0 +1,15 @@
+can you guide me to build this strategy on streak ?
+
+Strategy - 
+I want to use a custom straddle strategy where I will not take the long positions immediately, but wait for certain conditions before taking the positions - 
+
+Entry conditions - 
+ At 09:30 AM note down the price of ATM call and ATM put option.
+after every 15 mins, check the price of each leg. 
+if the price of any leg has increased by 15% from the price noted at 09:30 AM, buy one lot.
+we only buy once in a day
+
+Exit conditions - 
+Close the open leg at 03:15 PM irrespective of PNL.
+set the SL at 20% of the buy price.
+set the target at 50%.

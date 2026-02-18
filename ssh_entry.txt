@@ -1,0 +1,1 @@
+ssh -i .ssh/aws_algo.pem ubuntu@13.48.24.127 -v

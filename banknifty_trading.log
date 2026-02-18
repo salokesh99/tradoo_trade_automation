@@ -28,3 +28,319 @@ Traceback (most recent call last):
   File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 401, in trading_strategy
     if current_price > trading_day_high or current_price < trading_day_low:
 TypeError: '>' not supported between instances of 'NoneType' and 'NoneType'
+2025-06-12 15:06:37,934 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-12 15:06:39,971 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-12 15:06:40,032 - ERROR - Price initialization failed: Incorrect `api_key` or `access_token`.
+2025-06-12 15:06:40,032 - ERROR - Fatal error: Incorrect `api_key` or `access_token`.
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 295, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 229, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 90, in initialize_price_data
+    ltp_data = kite.ltp(f"NFO:{banknifty_future_token}")
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 611, in ltp
+    return self._get("market.quote.ltp", params={"i": ins})
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 861, in _get
+    return self._request(route, "GET", url_args=url_args, params=params, is_json=is_json)
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 937, in _request
+    raise exp(data["message"], code=r.status_code)
+kiteconnect.exceptions.TokenException: Incorrect `api_key` or `access_token`.
+2025-06-12 15:52:36,454 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-12 15:52:36,492 - INFO - Market already closed at 15:15:00
+2025-06-13 09:09:37,742 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:09:37,791 - INFO - Waiting until market opens at 09:15:00
+2025-06-13 09:09:37,791 - ERROR - Fatal error: sleep length must be non-negative
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 289, in main
+    sleep_time.sleep((datetime.combine(now.date(), TRADING_START_TIME) - now).total_seconds())
+ValueError: sleep length must be non-negative
+2025-06-13 09:14:43,486 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:14:43,527 - INFO - Waiting until market opens at 09:15:00
+2025-06-13 09:14:43,527 - ERROR - Fatal error: sleep length must be non-negative
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 289, in main
+    sleep_time.sleep((datetime.combine(now.date(), TRADING_START_TIME) - now).total_seconds())
+ValueError: sleep length must be non-negative
+2025-06-13 09:17:48,948 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:17:50,903 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 09:17:50,961 - ERROR - Price initialization failed: Incorrect `api_key` or `access_token`.
+2025-06-13 09:17:50,961 - ERROR - Fatal error: Incorrect `api_key` or `access_token`.
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 297, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 227, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 88, in initialize_price_data
+    ltp_data = kite.ltp(f"NFO:{banknifty_future_token}")
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 611, in ltp
+    return self._get("market.quote.ltp", params={"i": ins})
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 861, in _get
+    return self._request(route, "GET", url_args=url_args, params=params, is_json=is_json)
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 937, in _request
+    raise exp(data["message"], code=r.status_code)
+kiteconnect.exceptions.TokenException: Incorrect `api_key` or `access_token`.
+2025-06-13 09:18:20,088 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:18:21,854 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 09:18:21,896 - ERROR - Price initialization failed: Incorrect `api_key` or `access_token`.
+2025-06-13 09:18:21,896 - ERROR - Fatal error: Incorrect `api_key` or `access_token`.
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 297, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 227, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 88, in initialize_price_data
+    ltp_data = kite.ltp(f"NFO:{banknifty_future_token}")
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 611, in ltp
+    return self._get("market.quote.ltp", params={"i": ins})
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 861, in _get
+    return self._request(route, "GET", url_args=url_args, params=params, is_json=is_json)
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 937, in _request
+    raise exp(data["message"], code=r.status_code)
+kiteconnect.exceptions.TokenException: Incorrect `api_key` or `access_token`.
+2025-06-13 09:18:36,803 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:18:36,845 - INFO - Waiting until market opens at 09:20:00
+2025-06-13 09:18:36,845 - ERROR - Fatal error: sleep length must be non-negative
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 289, in main
+    sleep_time.sleep((datetime.combine(now.date(), TRADING_START_TIME) - now).total_seconds())
+ValueError: sleep length must be non-negative
+2025-06-13 09:25:15,514 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:25:15,571 - INFO - Waiting until market opens at 09:26:00
+2025-06-13 09:25:15,571 - ERROR - Fatal error: 'float' object has no attribute 'total_seconds'
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 289, in main
+    sleep_time.sleep(((now - datetime.combine(now.date(), TRADING_START_TIME) ).total_seconds()).total_seconds())
+AttributeError: 'float' object has no attribute 'total_seconds'
+2025-06-13 09:26:13,591 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:26:13,640 - INFO - Waiting until market opens at 09:27:00
+2025-06-13 09:47:49,647 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:47:49,696 - INFO - Waiting until market opens at 09:48:00 AM (-1370 seconds remaining)
+2025-06-13 09:47:49,696 - ERROR - Fatal error: sleep length must be non-negative
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 290, in main
+    sleep_time.sleep(wait_seconds)
+ValueError: sleep length must be non-negative
+2025-06-13 09:51:43,252 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:51:44,965 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 09:51:45,028 - ERROR - Price initialization failed: Incorrect `api_key` or `access_token`.
+2025-06-13 09:51:45,029 - ERROR - Fatal error: Incorrect `api_key` or `access_token`.
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 299, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 228, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 89, in initialize_price_data
+    ltp_data = kite.ltp(f"NFO:{banknifty_future_token}")
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 611, in ltp
+    return self._get("market.quote.ltp", params={"i": ins})
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 861, in _get
+    return self._request(route, "GET", url_args=url_args, params=params, is_json=is_json)
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 937, in _request
+    raise exp(data["message"], code=r.status_code)
+kiteconnect.exceptions.TokenException: Incorrect `api_key` or `access_token`.
+2025-06-13 09:51:56,107 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:51:56,150 - INFO - Waiting until market opens at 09:52:00 AM (4 seconds remaining)
+2025-06-13 09:52:01,708 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 09:52:01,769 - ERROR - Price initialization failed: Incorrect `api_key` or `access_token`.
+2025-06-13 09:52:01,770 - ERROR - Fatal error: Incorrect `api_key` or `access_token`.
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 299, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 228, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 89, in initialize_price_data
+    ltp_data = kite.ltp(f"NFO:{banknifty_future_token}")
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 611, in ltp
+    return self._get("market.quote.ltp", params={"i": ins})
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 861, in _get
+    return self._request(route, "GET", url_args=url_args, params=params, is_json=is_json)
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 937, in _request
+    raise exp(data["message"], code=r.status_code)
+kiteconnect.exceptions.TokenException: Incorrect `api_key` or `access_token`.
+2025-06-13 09:56:56,649 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:56:56,854 - INFO - Waiting until market opens at 09:57:00 AM (3 seconds remaining)
+2025-06-13 09:57:01,986 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 09:57:02,046 - ERROR - Price initialization failed: Incorrect `api_key` or `access_token`.
+2025-06-13 09:57:02,046 - ERROR - Fatal error: Incorrect `api_key` or `access_token`.
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 300, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 229, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 90, in initialize_price_data
+    ltp_data = kite.ltp(f"NFO:{banknifty_future_token}")
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 611, in ltp
+    return self._get("market.quote.ltp", params={"i": ins})
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 861, in _get
+    return self._request(route, "GET", url_args=url_args, params=params, is_json=is_json)
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 937, in _request
+    raise exp(data["message"], code=r.status_code)
+kiteconnect.exceptions.TokenException: Incorrect `api_key` or `access_token`.
+2025-06-13 09:58:44,457 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 09:58:46,473 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 09:58:46,573 - ERROR - Price initialization failed: Incorrect `api_key` or `access_token`.
+2025-06-13 09:58:46,573 - ERROR - Fatal error: Incorrect `api_key` or `access_token`.
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 300, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 229, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 90, in initialize_price_data
+    ltp_data = kite.ltp(f"NFO:{banknifty_future_token}")
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 611, in ltp
+    return self._get("market.quote.ltp", params={"i": ins})
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 861, in _get
+    return self._request(route, "GET", url_args=url_args, params=params, is_json=is_json)
+  File "/Users/lsn-user/Documents/traado/traado/lib/python3.8/site-packages/kiteconnect/connect.py", line 937, in _request
+    raise exp(data["message"], code=r.status_code)
+kiteconnect.exceptions.TokenException: Incorrect `api_key` or `access_token`.
+2025-06-13 10:20:53,321 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 10:20:55,391 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 10:20:55,455 - ERROR - Price initialization failed: 'NFO:14536194'
+2025-06-13 10:20:55,455 - ERROR - Fatal error: 'NFO:14536194'
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 336, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 267, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 129, in initialize_price_data
+    current_price = ltp_data[f"NFO:{banknifty_future_token}"]['last_price']
+KeyError: 'NFO:14536194'
+2025-06-13 10:31:15,601 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 10:31:17,319 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 10:31:17,390 - ERROR - Price initialization failed: 'NFO:BANKNIFTY'
+2025-06-13 10:31:17,390 - ERROR - Fatal error: 'NFO:BANKNIFTY'
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 335, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 266, in initialize_trading
+    initialize_price_data()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 127, in initialize_price_data
+    current_price = ltp_data[f"NFO:{banknifty_future_SYMBOL}"]['last_price']
+KeyError: 'NFO:BANKNIFTY'
+2025-06-13 10:41:07,587 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 10:41:09,259 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 10:41:09,377 - INFO - Initialized prices: 55556.1
+2025-06-13 10:41:09,377 - INFO - Trading session initialized
+2025-06-13 10:41:09,395 - INFO - No crossover: 55556.1 within Range(55556.1-55556.1)
+2025-06-13 10:41:09,395 - INFO - Next check in 900 seconds...
+2025-06-13 10:41:09,512 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:09,512 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:09,512 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:12,455 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:12,455 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:12,455 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:19,230 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:19,233 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:19,233 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:36,436 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:36,441 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:41:36,442 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:42:18,080 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:42:18,081 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:42:18,081 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:43:29,734 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:43:29,735 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:43:29,736 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:44:06,473 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:44:06,475 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:44:06,475 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:45:07,621 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:45:07,621 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:45:07,621 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:46:22,247 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:46:22,248 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:46:22,248 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:06,519 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 10:53:08,145 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 10:53:08,203 - INFO - Initialized prices: 55563.5
+2025-06-13 10:53:08,203 - INFO - Trading session initialized
+2025-06-13 10:53:08,227 - INFO - No crossover: 55563.5 within Range(55563.5-55563.5)
+2025-06-13 10:53:08,227 - INFO - Next check in 900 seconds...
+2025-06-13 10:53:08,344 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:08,344 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:08,344 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:11,010 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:11,010 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:11,010 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:17,479 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:17,479 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:17,479 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:35,495 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:35,496 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:53:35,496 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:54:24,834 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:54:24,837 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:54:24,837 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:55:26,830 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:55:26,835 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:55:26,835 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:56:37,514 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:56:37,515 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:56:37,516 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:57:51,948 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:57:51,949 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:57:51,949 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:58:50,305 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:58:50,307 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 10:58:50,307 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:04:50,438 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 11:04:50,487 - ERROR - Fatal error: name 'kite' is not defined
+Traceback (most recent call last):
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 338, in main
+    initialize_trading()
+  File "/Users/lsn-user/Documents/traado/traado/tradoo_3/09_45_straddle_4.py", line 259, in initialize_trading
+    instruments = kite.instruments("NFO")
+NameError: name 'kite' is not defined
+2025-06-13 11:06:01,989 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 11:06:03,620 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 11:06:03,682 - INFO - Initialized prices: 55566.85
+2025-06-13 11:06:03,682 - INFO - Trading session initialized
+2025-06-13 11:06:03,691 - INFO - No crossover: 55566.85 within Range(55566.85-55566.85)
+2025-06-13 11:06:03,691 - INFO - Next check in 900 seconds...
+2025-06-13 11:06:03,811 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:03,811 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:03,811 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:06,699 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:06,699 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:06,699 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:13,982 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:13,984 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:13,984 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:38,691 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:38,693 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:06:38,693 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:07:46,101 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:07:46,102 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:07:46,102 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:08:40,154 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:08:40,157 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:08:40,157 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:09:39,011 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:09:39,012 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:09:39,012 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:10:27,178 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:10:27,181 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:10:27,181 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:11:32,785 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:11:32,786 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:11:32,786 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:11:59,599 - INFO - Starting BankNifty Options Trading Strategy
+2025-06-13 11:12:01,243 - INFO - Current expiry: 2025-06-26, Next expiry: 2025-07-31
+2025-06-13 11:12:01,289 - INFO - Initialized prices: 55458.3
+2025-06-13 11:12:01,289 - INFO - Trading session initialized
+2025-06-13 11:12:01,297 - INFO - No crossover: 55458.3 within Range(55458.3-55458.3)
+2025-06-13 11:12:01,297 - INFO - Next check in 900 seconds...
+2025-06-13 11:12:01,406 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:01,406 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:01,406 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:04,575 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:04,575 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:04,575 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:13,856 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:13,861 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:13,861 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:39,370 - ERROR - Connection error: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:39,371 - ERROR - Connection closed: 1006 - connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
+2025-06-13 11:12:39,371 - INFO - WebSocket closed. Code: 1006, Reason: connection was closed uncleanly (WebSocket connection upgrade failed (403 - Forbidden))
